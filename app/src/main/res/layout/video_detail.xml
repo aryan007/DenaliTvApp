@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/black">
+
+        <ImageView
+            android:id="@+id/videoThumbnailImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/powder"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/play_button"
+            android:layout_width="@dimen/play_pause_btn_size"
+            android:layout_height="@dimen/play_pause_btn_size"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:src="@drawable/ic_action_play"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:id="@+id/requestVideoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/requestVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rects"
+                    android:text="Request Video"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/colorPrimary" />
+
+                <info.androidhive.cardview.MyTextView
+                    android:id="@+id/videoTimerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTex"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/videoDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/requestVideoLayout"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <info.androidhive.cardview.MyTextView
+                    android:id="@+id/discription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DESCRIPTION"
+                    android:textColor="@color/colorTex"
+                    android:textSize="16dp" />
+
+                <info.androidhive.cardview.MyTextView
+                    android:id="@+id/discription1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Three young people learn that love can neither be defined nor contained by society's definition of normal and abnormal.Prabhakar Sinha and KK Reddy have breakfast together in the morning with KK's family when Sidhant reaches there to give his father his medicines which he forgot at home."
+                    android:textColor="@color/colorTex"
+                    android:textSize="15dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/colordevider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <info.androidhive.cardview.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:padding="16dp"
+                        android:text="SIMILAR VIDEOS"
+                        android:textColor="@color/colorSub"
+                        android:textSize="16dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colordevider"
+                        android:padding="16dp" />
+
+                    <info.androidhive.cardview.ExpandableHeightGridView
+                        android:id="@+id/gridview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#fbfaff"
+                        android:horizontalSpacing="1.5dp"
+                        android:isScrollContainer="false"
+                        android:numColumns="2"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="1.5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
